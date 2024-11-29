@@ -1,0 +1,14 @@
+Package: GOqt
+Type: Package
+Title: Gene Ontology Enrichment and Visualization
+Version: 0.1.0
+Author: qinti 
+Maintainer: qinti <qinti@zju.edu.cn>
+Description: Functions to perform GO enrichment analysis and visualize the results.
+Depends: R (>= 4.0.0)
+Encoding: UTF-8
+License: GPL-3
+LazyData: true
+RoxygenNote: 7.3.1
+Imports: 
+    clusterProfiler
