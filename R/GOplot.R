@@ -2,17 +2,20 @@
 #' @author qinti
 #' @param gene
 #' genelist from DEG
+#' @param orgdb
+#' Genome annotation database of the species,the default is "org.Hs.eg.db".
 #' @return
 #' ggplot2 plot object
 #' @export
 #' @examples
 #' library(GOqt)
-#' genelist = c("gene1","gene2","gene3")
+#' library(tidyverse)
+#' library(clusterProfiler)
+#' genelist = c(93650,135,57538,27063)
 #' GO_plot(genelist)+ggtitle("GO enrichment of diff_genes")
-requireNamespace("org.Hs.eg.db", quietly = TRUE)
-GO_plot = function(gene){
+GO_plot = function(gene,orgdb = "org.Hs.eg.db"){
 go_result <- clusterProfiler::enrichGO(gene = gene,
-                   OrgDb=org.Hs.eg.db,
+                   OrgDb="org.Hs.eg.db",
                    keyType = "ENTREZID",
                    ont = "ALL",
                    pAdjustMethod = "BH",
